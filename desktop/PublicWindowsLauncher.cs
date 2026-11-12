@@ -120,7 +120,9 @@ internal static class PublicWindowsLauncher {
             if (IsReady(ready, python)) return;
             if (Directory.Exists(ready))
                 throw new IOException("现有运行目录不完整。");
-            string staging = Path.Combine(cache, "setup-" + Guid.NewGuid().ToString("N"));
+            // The staging name must fit anywhere the final runtime directory fits.
+            string staging = Path.Combine(cache, "s-" + Guid.NewGuid().ToString("N").Substring(0, 12));
+            if (Directory.Exists(staging)) throw new IOException("运行组件暂存目录已存在。");
             Directory.CreateDirectory(staging);
             try {
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
