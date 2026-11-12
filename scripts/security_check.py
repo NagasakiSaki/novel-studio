@@ -97,7 +97,7 @@ DESKTOP_IMPORTS['desktop/object_actions.py'] = {'context_menu'}
 DESKTOP_IMPORTS['desktop/object_controller.py'] = {'PySide6', 'core', 'dialogs', 'difflib', 'export_ui', 'materials', 'workflow_controller', 'project_backup', 'context_menu'}
 DESKTOP_IMPORTS['project_backup.py'] = {'io', 'zipfile', 'zlib', 'core'}
 DESKTOP_IMPORTS['desktop/interactions.py'] = {'PySide6', 'context_menu', 'object_actions', 'ui_state'}
-DESKTOP_IMPORTS['desktop/export_ui.py'].update({'export_selection', 'context_menu'})
+DESKTOP_IMPORTS['desktop/export_ui.py'].update({'export_selection', 'context_menu', 'export_formats'})
 DESKTOP_IMPORTS['desktop/workspace.py'].update({'context_menu', 'object_actions'})
 DESKTOP_IMPORTS['desktop/shell.py'].add('interactions')
 DESKTOP_IMPORTS['desktop/theme.py'].add('core')
@@ -338,7 +338,7 @@ def check_repository(root: Path = ROOT) -> list[str]:
         if path.suffix.lower() in {".js", ".mjs", ".cjs", ".ts", ".sh", ".ps1", ".bat", ".cmd", ".exe", ".dll"} or path.name in {"Dockerfile", "docker-compose.yml", "compose.yaml", "package.json"}:
             if not reviewed_test_evidence(path, relative.as_posix()):
                 findings.append(relative.as_posix() + ": unreviewed executable/service surface")
-        if path.suffix in {".py", ".pyw"} and relative.parts[0] not in {"scripts", "vendor", "tests"} and relative.as_posix() not in REVIEWED_IMPORTS and relative.as_posix() not in {"tools/build_plugin.py", "tools/build_windows_gui.py", "tools/build_workbench.py", "tools/build_selection_icons.py"}:
+        if path.suffix in {".py", ".pyw"} and relative.parts[0] not in {"scripts", "vendor", "tests"} and relative.as_posix() not in REVIEWED_IMPORTS and relative.as_posix() not in {"tools/build_plugin.py", "tools/build_windows_gui.py", "tools/build_workbench.py", "tools/build_selection_icons.py", "tools/build_public_windows.py"}:
             findings.append(relative.as_posix() + ": unreviewed Python surface")
     for name in ("hooks.json", "mcp_config.json"):
         if (root / name).exists():

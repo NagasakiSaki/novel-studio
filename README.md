@@ -6,14 +6,14 @@ Novel Studio is a local writing workspace for novelists. Write drafts, manage ou
 
 ## Start on Windows
 
-1. Open `NovelStudio.exe` from the complete desktop application folder.
+1. Download the [Windows x64 ZIP](https://github.com/NagasakiSaki/novel-studio/releases/tag/v0.1.0), extract the whole folder, then open `NovelStudio.exe`. Confirm the one-time download of runtime components on first launch.
 2. In the project view, open the offline draft and review sample. Create your own project in a folder you can back up.
 3. Open the draft workspace, create a draft, and save it. Reopen the same project to continue writing.
 
 Local writing needs no model account. To use AI, open the first collaboration flow, configure the writer and editor, then review the recipient and selected context before sending. Official services may charge for requests.
 
-## Source candidate
+## Current release
 
-This repository publishes the source for the Windows x64 edition. The current candidate is `0.1.0-rc.2.dev.6`. The Windows download is undergoing distribution review. Developers can build a local copy and open the offline sample with the [contributor guide](CONTRIBUTING.md).
+Version `0.1.0` supports Windows x64. After setup, you can write offline and export to Word, PDF, Markdown, TXT, HTML and ODT. EPUB and RTF export are deferred. See the [contributor guide](CONTRIBUTING.md) to build a local copy.
 
 The project source is [MIT licensed](LICENSE). See the [third-party notices](THIRD_PARTY_NOTICES.md) and [security information](SECURITY.md).

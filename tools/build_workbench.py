@@ -60,7 +60,7 @@ def source_provenance(root=ROOT):
     return {'commit': commit, 'tree': tree, 'inputs': inputs}
 
 
-def package(output):
+def package(output, *, include_pandoc=True):
     if os.name != "nt" or not output.is_absolute() or ".." in output.parts or output.exists() or output.is_relative_to(ROOT):
         raise ValueError("Build into a NEW Windows folder outside the source checkout")
     version = re.search(r'^__version__ = "([0-9A-Za-z.-]+)"$', (ROOT / "src/novel_studio/__init__.py").read_text(encoding="utf-8"), re.M).group(1)
@@ -211,20 +211,22 @@ def package(output):
         copy(ROOT / name, name)
     # Local non-public candidate only. Independent GPL executable retains its
     # original notices; this is not a public redistribution qualification.
-    converter = json.loads((ROOT / "tools/pandoc-lock.json").read_bytes())
-    converter_zip = ROOT / ".build/pandoc-3.13-audit" / converter["archive"]
-    verify(converter_zip)
-    if hashlib.sha256(converter_zip.read_bytes()).hexdigest() != converter["sha256"]:
-        raise ValueError("Official converter release archive changed")
-    with zipfile.ZipFile(converter_zip) as archive:
-        for name, expected in converter["files"].items():
-            data = archive.read(name)
-            if hashlib.sha256(data).hexdigest() != expected:
-                raise ValueError("Converter release member differs from the reviewed input")
-            target = output / ("tools/pandoc/pandoc.exe" if name.endswith(".exe") else "Runtime-Licenses/Pandoc/" + Path(name).name)
-            target.parent.mkdir(parents=True, exist_ok=True)
-            target.open("xb").write(data)
-    copy(ROOT / "tools/pandoc-lock.json", "Runtime-Licenses/Pandoc/SOURCE.json")
+    converter = None
+    if include_pandoc:
+        converter = json.loads((ROOT / "tools/pandoc-lock.json").read_bytes())
+        converter_zip = ROOT / ".build/pandoc-3.13-audit" / converter["archive"]
+        verify(converter_zip)
+        if hashlib.sha256(converter_zip.read_bytes()).hexdigest() != converter["sha256"]:
+            raise ValueError("Official converter release archive changed")
+        with zipfile.ZipFile(converter_zip) as archive:
+            for name, expected in converter["files"].items():
+                data = archive.read(name)
+                if hashlib.sha256(data).hexdigest() != expected:
+                    raise ValueError("Converter release member differs from the reviewed input")
+                target = output / ("tools/pandoc/pandoc.exe" if name.endswith(".exe") else "Runtime-Licenses/Pandoc/" + Path(name).name)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.open("xb").write(data)
+        copy(ROOT / "tools/pandoc-lock.json", "Runtime-Licenses/Pandoc/SOURCE.json")
     guide = ROOT / "docs/versions/beginner-workbench/user-guide/FIRST_SESSION.md"
     copy(guide, "使用指南.txt")
     if local_protection is not None:

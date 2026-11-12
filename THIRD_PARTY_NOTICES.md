@@ -18,6 +18,8 @@ GitHub Actions and jsonschema are development-only tools. See `.github/workflows
 
 ## Desktop runtime additions (Phase 1.2.4.1)
 
+The public Windows ZIP ships the application with its selected source integrations and notices. On first launch, confirmed setup downloads the pinned CPython and dependency archives from Python.org and PyPI and installs their selected runtime files locally. The ZIP itself contains no Python, Qt, Microsoft runtime DLLs or Pandoc executable. The local development bundle described below has a separate runtime closure.
+
 The MIT vendor list above describes the plugin payload, not the license of the entire separate desktop runtime. Qt/PySide 6.12.0 notices are retained under `third_party/qt-6.12.0`; the Python runtime retains its own LICENSE.txt. These components are not relicensed as Novel Studio MIT code.
 
 | Import dependency | Pinned version | Original terms / notice |

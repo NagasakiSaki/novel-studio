@@ -6,6 +6,7 @@ from PySide6.QtWidgets import (QCheckBox, QComboBox, QDialog, QDoubleSpinBox, QF
     QFormLayout, QHBoxLayout, QLabel, QLineEdit, QListWidget, QListWidgetItem, QMessageBox,
     QMenu, QPlainTextEdit, QPushButton, QScrollArea, QSpinBox, QTabWidget, QTextBrowser, QVBoxLayout, QWidget, QSplitter, QGroupBox)
 from ..core import CoreError
+from ..export_formats import CONVERTER_FORMATS, converter_path
 from ..exporting import ExportService, DEFAULTS, FORMATS, TEMPLATES
 from .dialogs import InformationDialog
 from .jobs import Job
@@ -130,9 +131,15 @@ class ExportDialog(QDialog):
         layout = QVBoxLayout(preview)
         top = QHBoxLayout()
         self.format = QComboBox()
+        has_converter = converter_path() is not None
         for key, text in FORMATS.items():
-            self.format.addItem(text + " (." + key + ")", key)
+            if has_converter or key not in CONVERTER_FORMATS:
+                self.format.addItem(text + " (." + key + ")", key)
         row.addWidget(self.format)
+        if not has_converter:
+            format_note = QLabel("当前版本提供六种导出格式。EPUB 和 RTF 导出暂缓。")
+            format_note.setWordWrap(True)
+            select.layout().addWidget(format_note)
         self.initial_preview_button = QPushButton("预览本次导出")
         self.initial_preview_button.setObjectName("primary")
         self.initial_preview_button.clicked.connect(self.build_preview)

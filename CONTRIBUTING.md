@@ -25,6 +25,7 @@ python -m venv .venv-workbench
 - Build the Antigravity component with `python -B tools/build_plugin.py --out <new-absolute-folder>`. Place it outside the checkout.
 - The Windows desktop builder needs a clean committed checkout, Python 3.13 x64, the .NET Framework C# compiler, and the original locked wheel archives. Put the Qt, import parser and provider wheels in `.build/qt-wheels`, `.build/import-wheels` and `.build/provider-wheels`. Install the three requirements files into `.venv-workbench`. For a local desktop build, put the official archive identified in `tools/pandoc-lock.json` in `.build/pandoc-3.13-audit`.
 - Run `.\.venv-workbench\Scripts\python.exe -B tools/build_workbench.py --out <new-absolute-folder>`. The builder checks the locked archives and records source and payload hashes. This desktop build configuration is for local testing. See the [third-party notices](THIRD_PARTY_NOTICES.md) for redistribution status.
+- To build the public Windows package, use the same audited wheel inputs and run `.\.venv-workbench\Scripts\python.exe -B tools/build_public_windows.py --out <new-absolute-folder> --python-archive <official-embeddable-zip>`. The CPython URL and hash are pinned in the builder. The resulting folder includes the app and the runtime download plan. First-run setup fetches the pinned archives directly from Python.org and PyPI after user confirmation.
 
 Report issues using synthetic reproductions and preserve upstream license notices. Review the [security policy](SECURITY.md) before sharing diagnostics.
 

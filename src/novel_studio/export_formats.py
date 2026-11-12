@@ -19,6 +19,7 @@ from .text_metrics import upstream
 from .document_titles import same_heading
 
 PANDOC_SHA = "7ab6244548ba15494fab956230050516fe8f57c36ec2dfb50133719ad3b5a791"
+CONVERTER_FORMATS = frozenset({"epub", "rtf"})
 
 
 def cover_image(path):
@@ -293,12 +294,19 @@ def odt(bundle, config):
     return bytes(output.data())
 
 
+def converter_path():
+    if os.name == "nt":
+        for name in ("tools/pandoc/pandoc.exe", ".build/pandoc-3.13-audit/pandoc-3.13/pandoc.exe"):
+            candidate = ROOT / name
+            if candidate.is_file():
+                return candidate
+    return None
+
+
 def pandoc(bundle, config, format):
-    executable = ROOT / "tools/pandoc/pandoc.exe"
-    if not executable.is_file():
-        executable = ROOT / ".build/pandoc-3.13-audit/pandoc-3.13/pandoc.exe"
-    if os.name != "nt" or not executable.is_file():
-        raise CoreError("EXPORT_CONVERTER_MISSING", "此格式需要经核验的 Windows 转换组件；请使用完整本地安装包，其他格式不受影响。")
+    executable = converter_path()
+    if executable is None:
+        raise CoreError("EXPORT_CONVERTER_MISSING", "当前版本未提供 EPUB 和 RTF 导出。请选择其他格式。")
     # Pin opened directories and, on Windows, deny write/delete sharing on the
     # verified executable until the child exits. No user executable path or PATH.
     import secure_read
@@ -383,6 +391,6 @@ def render(bundle, config, format, cover=None):
         return pdf(bundle, config)
     if format == "odt":
         return odt(bundle, config)
-    if format in {"epub", "rtf"}:
+    if format in CONVERTER_FORMATS:
         return pandoc(bundle, config, format)
     raise CoreError("EXPORT_INVALID", "未知导出格式。")

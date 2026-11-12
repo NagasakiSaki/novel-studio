@@ -27,6 +27,15 @@ class ExportUITests(unittest.TestCase):
         cls.app = QApplication.instance() or QApplication([])
         apply_theme(cls.app, "light")
 
+    def test_missing_converter_leaves_the_six_builtin_options(self):
+        with tempfile.TemporaryDirectory() as folder:
+            core = Core.create(Path(folder), "导出格式合成作品", ROOT)
+            with patch("novel_studio.desktop.export_ui.converter_path", return_value=None):
+                dialog = ExportDialog(core)
+            self.assertEqual([dialog.format.itemData(i) for i in range(dialog.format.count())],
+                             ["docx", "pdf", "md", "txt", "html", "odt"])
+            dialog.close()
+
     def test_default_formal_draft_mark_preview_invalidation_and_background_save(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)

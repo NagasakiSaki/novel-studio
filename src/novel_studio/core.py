@@ -22,7 +22,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import workspace_admin as admin
 from safe_project import SafeTree, digest, relative_parts, LIMIT as TEXT_BUDGET_BYTES
 
-VERSION = "0.1.0-rc.2.dev.6"
+VERSION = "0.1.0"
 AREAS = {"drafts": "Writer-Workspace/Drafts", "proposals": "Writer-Workspace/Proposed-Changes",
          "reports": "Editor-Workspace/Review-Reports", "writer_context": "Writer-Workspace/Context-Snapshot",
          "editor_context": "Editor-Workspace/Manuscript-Snapshot", "canonical": "Canonical"}

@@ -5,6 +5,7 @@ import ctypes
 import os
 
 root = Path(__file__).resolve().parent
+sys.path.insert(0, str(root))
 sys.path.insert(0, str(root / "src"))
 try:
     from novel_studio.__main__ import main
