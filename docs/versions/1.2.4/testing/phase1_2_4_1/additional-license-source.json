@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-05",
+  "ebooklib_excluded": {
+    "path": "LICENSE.txt",
+    "sha": "dba13ed2ddf783ee8118c6a581dbf75305f816a3",
+    "url": "https://github.com/aerkalov/ebooklib/blob/98eda5692bc6bc1f290c89da01f556b9ea134435/LICENSE.txt",
+    "commit": "98eda5692bc6bc1f290c89da01f556b9ea134435"
+  },
+  "lxml_elementtree": {
+    "commit": "3c1a4c7f2d5a3c19efe01adfd3c33ac3c8fe52c1",
+    "source": "https://github.com/lxml/lxml/blob/3c1a4c7f2d5a3c19efe01adfd3c33ac3c8fe52c1/doc/licenses/elementtree.txt",
+    "blob_sha": "dde28f1cacc46d93e8829154bb66bd4253146e28",
+    "local": "third_party/import-parsers/lxml/elementtree.txt",
+    "note": "Upstream notice referenced by wheel LICENSES.txt, distributed in addition to original wheel notices. Python PSF notice is also in bundled runtime/LICENSE.txt."
+  }
+}

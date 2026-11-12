@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Novel Studio JSON-RPC 2.0 stdio request",
+  "type": "object", "additionalProperties": false,
+  "properties": {
+    "jsonrpc": {"const": "2.0"},
+    "id": {"type": ["string", "integer"]},
+    "method": {"type": "string", "maxLength": 100},
+    "params": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "protocol_version": {"const": "1"},
+        "correlation_id": {"type": "string", "minLength": 1, "maxLength": 100},
+        "params": {"type": "object"},
+        "idempotency_key": {"type": "string", "pattern": "^[A-Za-z0-9_-]{8,100}$"}
+      }
+    }
+  },
+  "required": ["jsonrpc", "id", "method"]
+}

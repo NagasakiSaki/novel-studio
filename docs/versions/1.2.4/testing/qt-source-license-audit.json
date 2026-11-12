@@ -1,0 +1,89 @@
+[
+  {
+    "source": "https://raw.githubusercontent.com/qtproject/pyside-pyside-setup/f50facb83fc3dc5f3240c854668c7a6dd93871b2/LICENSES/LGPL-3.0-only.txt",
+    "file": "third_party\\qt-6.12.0\\LGPL-3.0-only.txt",
+    "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768",
+    "commit": "f50facb83fc3dc5f3240c854668c7a6dd93871b2"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/qtproject/pyside-pyside-setup/f50facb83fc3dc5f3240c854668c7a6dd93871b2/LICENSES/GPL-2.0-only.txt",
+    "file": "third_party\\qt-6.12.0\\GPL-2.0-only.txt",
+    "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+    "commit": "f50facb83fc3dc5f3240c854668c7a6dd93871b2"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/qtproject/pyside-pyside-setup/f50facb83fc3dc5f3240c854668c7a6dd93871b2/LICENSES/GPL-3.0-only.txt",
+    "file": "third_party\\qt-6.12.0\\GPL-3.0-only.txt",
+    "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+    "commit": "f50facb83fc3dc5f3240c854668c7a6dd93871b2"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/qtproject/pyside-pyside-setup/f50facb83fc3dc5f3240c854668c7a6dd93871b2/LICENSES/Qt-GPL-exception-1.0.txt",
+    "file": "third_party\\qt-6.12.0\\Qt-GPL-exception-1.0.txt",
+    "sha256": "40678d338ce53cd93f8b22b281a2ecbcaa3ee65ce60b25ffb0c462b0530846b2",
+    "commit": "f50facb83fc3dc5f3240c854668c7a6dd93871b2"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/qtproject/pyside-pyside-setup/f50facb83fc3dc5f3240c854668c7a6dd93871b2/README.pyside6_essentials.md",
+    "sha256": "a025f03713ae4b2fa15e8ca4730ec5f45f4a6240347c5f65aecc63010d5d4c2a",
+    "commit": "f50facb83fc3dc5f3240c854668c7a6dd93871b2",
+    "reviewed_header": [
+      "# PySide6 Essentials",
+      "",
+      "PySide6 is the official Python module from the",
+      "[Qt for Python project](https://wiki.qt.io/Qt_for_Python),",
+      "which provides access to the complete Qt 6.0+ framework.",
+      "",
+      "The Qt for Python project is developed in the open, with all facilities you'd expect",
+      "from any modern OSS project such as all code in a git repository and an open",
+      "design process. We welcome any contribution conforming to the",
+      "[Qt Contribution Agreement](https://www.qt.io/contributionagreement/).",
+      "",
+      "This is a minimal wheel for [PySide6](https://pypi.org/project/PySide6),",
+      "it includes only the essentials Qt modules:",
+      ""
+    ]
+  },
+  {
+    "source": "https://raw.githubusercontent.com/qtproject/pyside-pyside-setup/f50facb83fc3dc5f3240c854668c7a6dd93871b2/sources/pyside6/libpyside/pyside.cpp",
+    "sha256": "1f21ca591de01501649196aba5a471f30ecfb8ad4ea54a634881477d093b586b",
+    "commit": "f50facb83fc3dc5f3240c854668c7a6dd93871b2",
+    "reviewed_header": [
+      "// Copyright (C) 2016 The Qt Company Ltd.",
+      "// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only",
+      "// Qt-Security score:significant reason:default",
+      "",
+      "#include \"pyside.h\"",
+      "#include \"pysideinit.h\"",
+      "#include \"pysidecleanup.h\"",
+      "#include \"pysidemetatype.h\"",
+      "#include \"pysideqapp.h\"",
+      "#include \"pysideqobject.h\"",
+      "#include \"pysideqobject_p.h\"",
+      "#include \"pysideutils.h\"",
+      "#include \"pyside_p.h\"",
+      "#include \"signalmanager_p.h\""
+    ]
+  },
+  {
+    "source": "https://raw.githubusercontent.com/qtproject/pyside-pyside-setup/f50facb83fc3dc5f3240c854668c7a6dd93871b2/sources/shiboken6/libshiboken/basewrapper.cpp",
+    "sha256": "199a86e6daf4447ff77b364e1dd3da9fcbc8bbf4299bcf6bf4ee95eaaa9c15af",
+    "commit": "f50facb83fc3dc5f3240c854668c7a6dd93871b2",
+    "reviewed_header": [
+      "// Copyright (C) 2019 The Qt Company Ltd.",
+      "// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only",
+      "// Qt-Security score:critical reason:low-level-memory-management",
+      "",
+      "#include \"autodecref.h\"",
+      "#include \"basewrapper.h\"",
+      "#include \"basewrapper_p.h\"",
+      "#include \"bindingmanager.h\"",
+      "#include \"gilstate.h\"",
+      "#include \"helper.h\"",
+      "#include \"pep384ext.h\"",
+      "#include \"pep384impl_p.h\"",
+      "#include \"sbkconverter.h\"",
+      "#include \"sbkerrors.h\""
+    ]
+  }
+]

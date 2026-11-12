@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-05",
+  "scope": "Official release tags resolved to exact commits; this is not a reproducible wheel-build attestation.",
+  "releases": [
+    {
+      "repository": "executablebooks/markdown-it-py",
+      "commit": "36c5f547144df2d01970a5792d68c71a3380b227",
+      "date": "2026-05-07T12:06:02Z",
+      "url": "https://github.com/executablebooks/markdown-it-py/commit/36c5f547144df2d01970a5792d68c71a3380b227"
+    },
+    {
+      "repository": "executablebooks/mdurl",
+      "commit": "596bf1c8752de45fa576a52c315d6d8cc5bb1a4e",
+      "date": "2022-08-14T12:35:21Z",
+      "url": "https://api.github.com/repos/executablebooks/mdurl/commits/596bf1c8752de45fa576a52c315d6d8cc5bb1a4e"
+    },
+    {
+      "repository": "py-pdf/pypdf",
+      "commit": "b2c3fa2ee689f582a0de256a45e30bd96c68f807",
+      "date": "2026-10-28T16:50:17Z",
+      "url": "https://api.github.com/repos/py-pdf/pypdf/commits/b2c3fa2ee689f582a0de256a45e30bd96c68f807"
+    },
+    {
+      "repository": "python-openxml/python-docx",
+      "commit": "e45454602b53e8e572b179ccf1c91093ec9f4ed7",
+      "date": "2025-06-16T21:24:39Z",
+      "url": "https://github.com/python-openxml/python-docx/commit/e45454602b53e8e572b179ccf1c91093ec9f4ed7"
+    },
+    {
+      "repository": "lxml/lxml",
+      "commit": "3c1a4c7f2d5a3c19efe01adfd3c33ac3c8fe52c1",
+      "date": "2026-09-02T09:10:52Z",
+      "url": "https://github.com/lxml/lxml/commit/3c1a4c7f2d5a3c19efe01adfd3c33ac3c8fe52c1"
+    },
+    {
+      "repository": "joshy/striprtf",
+      "commit": "3bf7d94328f54381b68ca38fe8a296e496d27232",
+      "date": "2026-10-24T15:32:11Z",
+      "url": "https://github.com/joshy/striprtf/commit/3bf7d94328f54381b68ca38fe8a296e496d27232"
+    },
+    {
+      "repository": "python/typing_extensions",
+      "commit": "f29cd28d8ed7642cafb1d18daf5aa41be6a5c0aa",
+      "date": "2026-07-02T08:33:41Z",
+      "url": "https://api.github.com/repos/python/typing_extensions/commits/f29cd28d8ed7642cafb1d18daf5aa41be6a5c0aa"
+    }
+  ],
+  "additional_source_reads": [
+    {
+      "repository": "executablebooks/mdurl",
+      "path": "LICENSE",
+      "commit": "596bf1c8752de45fa576a52c315d6d8cc5bb1a4e",
+      "end_line": "full",
+      "blob_sha": "2a920c59d8abdd485a774087915986448495fd7c",
+      "url": "https://github.com/executablebooks/mdurl/blob/596bf1c8752de45fa576a52c315d6d8cc5bb1a4e/LICENSE"
+    },
+    {
+      "repository": "executablebooks/mdurl",
+      "path": "src/mdurl/__init__.py",
+      "commit": "596bf1c8752de45fa576a52c315d6d8cc5bb1a4e",
+      "end_line": 70,
+      "blob_sha": "cdbb640e004cef0e950a656a53d92d89d82c7472",
+      "url": "https://github.com/executablebooks/mdurl/blob/596bf1c8752de45fa576a52c315d6d8cc5bb1a4e/src/mdurl/__init__.py"
+    },
+    {
+      "repository": "python/typing_extensions",
+      "path": "LICENSE",
+      "commit": "f29cd28d8ed7642cafb1d18daf5aa41be6a5c0aa",
+      "end_line": "full",
+      "blob_sha": "f26bcf4d2de6eb136e31006ca3ab447d5e488adf",
+      "url": "https://github.com/python/typing_extensions/blob/f29cd28d8ed7642cafb1d18daf5aa41be6a5c0aa/LICENSE"
+    },
+    {
+      "repository": "python/typing_extensions",
+      "path": "src/typing_extensions.py",
+      "commit": "f29cd28d8ed7642cafb1d18daf5aa41be6a5c0aa",
+      "end_line": 100,
+      "blob_sha": "ced78373258ef307c9a94ef15286e6da359e7a80",
+      "url": "https://github.com/python/typing_extensions/blob/f29cd28d8ed7642cafb1d18daf5aa41be6a5c0aa/src/typing_extensions.py"
+    }
+  ]
+}

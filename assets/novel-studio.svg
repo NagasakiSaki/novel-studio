@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+  <title>Novel Studio</title>
+  <desc>An open ivory book with a brass bookmark on deep evergreen.</desc>
+  <defs>
+    <linearGradient id="cover" x1="30" y1="8" x2="226" y2="256" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#28574B"/>
+      <stop offset="1" stop-color="#142F2C"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="48" y1="62" x2="196" y2="190" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFAEC"/>
+      <stop offset="1" stop-color="#E9DFC7"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="248" height="248" rx="55" fill="url(#cover)"/>
+  <rect x="5" y="5" width="246" height="246" rx="54" stroke="#FFFFFF" stroke-opacity=".12" stroke-width="2"/>
+  <path d="M48 65C76 56 101 59 122 74V194C99 181 75 177 48 183V65Z" fill="url(#paper)"/>
+  <path d="M134 74C155 59 180 56 208 65V183C181 177 157 181 134 194V74Z" fill="url(#paper)"/>
+  <path d="M64 96C79 94 93 96 106 102M64 119C79 117 93 120 106 125M64 142C76 141 88 143 98 147" stroke="#527162" stroke-width="6" stroke-linecap="round"/>
+  <path d="M150 113C163 108 177 106 192 108M150 136C163 131 177 130 192 132M150 159C160 155 172 153 184 154" stroke="#527162" stroke-width="6" stroke-linecap="round"/>
+  <path d="M165 60C172 59 178 59 185 60V98L175 92L165 98V60Z" fill="#CBA66C"/>
+  <path d="M122 206H134" stroke="#CBA66C" stroke-width="6" stroke-linecap="round"/>
+</svg>

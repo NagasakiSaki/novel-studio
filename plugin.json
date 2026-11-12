@@ -1,0 +1,25 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "novel-studio",
+  "displayName": "Novel Studio",
+  "version": "0.1.0-alpha.1",
+  "description": "Professional long-form fiction planning, editorial workflows, and read-only continuity tools for Antigravity.",
+  "logo": "assets/logo.svg",
+  "author": {
+    "name": "Novel Studio contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "fiction",
+    "literature",
+    "continuity",
+    "editing",
+    "Chinese"
+  ],
+  "suggestedPrompts": [
+    "按本书文风讨论下一章细纲，先不要写正文。",
+    "以责编身份检查这份草稿的知情边界，只给证据和建议。",
+    "说明本地字数统计和大纲切片的用法与限制。"
+  ]
+}
+

@@ -1,0 +1,11 @@
+* text=auto eol=lf
+vendor/** -text
+third_party/** -text -whitespace
+docs/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.svg text eol=lf
+*.pdf binary
+# Original Windows audit recorder captures retain their byte-level CRCRLF.
+docs/versions/1.2.5/testing/original-cli-baseline/**/synthetic-prompt-*.txt binary
+# Preserve deliberate Markdown hard breaks in raw synthetic model reports.
+docs/versions/1.2.4/testing/phase1_2_4_1/host/**/责编报告.md whitespace=-blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
